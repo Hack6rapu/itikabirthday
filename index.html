@@ -11,14 +11,6 @@
 </head>
 
 <body>
-<audio id="audio">
-	<source src="img/S_J.mp3" type="audio/mpeg">
-</audio>
-<center>
- <button id="playPauseBTN" onclick="playPause()">Play ►</button>
- <button onclick="stop()">Stop ▋</button>
-</center>
-	
   <div class="nps-wizzard-panel__heart"></div>
   <div class="container">
     <div class="one">
@@ -142,27 +134,4 @@
  </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script type="application/javascript" src="script/main.js"></script>
-<script type="text/javascript">
-var audio = document.getElementById('audio');
-var playPauseBTN = document.getElementById('playPauseBTN');
-var count = 0;
-
-function playPause(){
-	if(count == 0){
-		count = 1;
-		audio.play();
-		playPauseBTN.innerHTML = "Pause ⏸";
-	}else{
-		count = 0;
-		audio.pause();
-		playPauseBTN.innerHTML = "Play ►";
-	}
-}
-function stop(){
-	playPause()
-	audio.pause();
-	audio.currentTime = 0;
-	playPauseBTN.innerHTML = "Play ►";
-}
-</script>
 </html>
