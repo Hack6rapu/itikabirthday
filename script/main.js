@@ -304,3 +304,21 @@ const resolveFetch = () => {
 };
 
 resolveFetch().then(animationTimeline());
+
+
+//For audio
+let audioButton = document.querySelector('.audio-button');   // <-- Change CSS Class Here
+       audioButton.addEventListener('click', function(){
+        var audio = document.getElementById("audio");
+        if (audio.paused) {
+		    audio.play();
+		    audioButton.className="";
+		    audioButton.className="play";
+        }
+         else{
+		audio.pause();
+		audioButton.className="";
+		audioButton.className="pause";
+            // audio.currentTime = 0
+        }
+ });
