@@ -306,19 +306,19 @@ const resolveFetch = () => {
 resolveFetch().then(animationTimeline());
 
 
-//For audio
-let audioButton = document.querySelector('.audio-button');   // <-- Change CSS Class Here
-       audioButton.addEventListener('click', function(){
-        var audio = document.getElementById("audio");
-        if (audio.paused) {
-		    audio.play();
-		    audioButton.className="";
-		    audioButton.className="play";
-        }
-         else{
+//for audio
+var audio = document.getElementById('audio');
+var playPauseBTN = document.getElementById('playPauseBTN');
+var count = 0;
+
+function playPause(){
+	if(count == 0){
+		count = 1;
+		audio.play();
+		playPauseBTN.innerHTML = "Pause ⏸";
+	}else{
+		count = 0;
 		audio.pause();
-		audioButton.className="";
-		audioButton.className="pause";
-            // audio.currentTime = 0
-        }
- });
+		playPauseBTN.innerHTML = "Play ►";
+	}
+}
